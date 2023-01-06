@@ -1,0 +1,202 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #006bfd;
+  --lightblue: #4a96ff;
+  --grey: #e9ecee;
+  --red: #d32f2f;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+button {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  /* width: 100%; */
+  background-color: var(--grey);
+}
+.content {
+  display: none;
+}
+
+/* preloader  */
+.loader {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: transparent;
+  backdrop-filter: blur(30px);
+  display: block;
+}
+
+/* grid layout */
+.sideBar {
+  grid-area: sidebar;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-left: 8%;
+  padding-top: 4%;
+  max-width: 400px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+}
+
+.topMenu {
+  grid-area: topMenu;
+  background-color: var(--white);
+  border-bottom: 5px solid var(--grey);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  align-items: center;
+  padding-left: 2%;
+  justify-content: space-between;
+}
+
+.main {
+  grid-area: main;
+  background-color: var(--white);
+  overflow: auto;
+  position: relative;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "sidebar topMenu topMenu "
+    "sidebar main main"
+    "sidebar main main"
+    "sidebar main main"
+    "sidebar main main"
+    "sidebar main main";
+  grid-template-rows: 80px auto;
+  grid-template-columns: 300px auto;
+
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: -1;
+}
+
+.dataTable {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 20px;
+}
+
+.table-row {
+  border-bottom: 1px solid var(--grey);
+}
+
+/* delete button */
+
+.deleteButton,
+.addNewButton,
+.createButton {
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 30px;
+  margin-right: 20px;
+  display: none;
+}
+.deleteButton:hover,
+.addNewButton:hover,
+.createButton:hover {
+  background-color: var(--grey);
+}
+
+.deleteCheckbox {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.createUserForm {
+  margin: 40px;
+  display: none;
+}
+.createUserForm input,
+.createUserForm label {
+  width: 100%;
+
+  display: block;
+}
+.createUserForm input {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 3px solid var(--grey);
+}
+.createUserForm label {
+  font-weight: bold;
+}
+.star {
+  color: red;
+}
+
+/* arrow back button */
+.arrow-container {
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid black; */
+
+  position: relative;
+  transform: scale(0.3);
+
+  display: none;
+}
+
+.arrow-side1,
+.arrow-side2,
+.arrow-side3 {
+  position: absolute;
+  width: 60px;
+  height: 11px;
+  background-color: rgb(16, 17, 17);
+
+  border-radius: 40px;
+}
+.arrow-side1 {
+  top: 27px;
+
+  transform: rotate(-40deg);
+}
+.arrow-side2 {
+  top: 60px;
+
+  transform: rotate(40deg);
+}
+.arrow-side3 {
+  top: 44px;
+  left: 30px;
+  width: 70px;
+}
